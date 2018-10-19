@@ -11,9 +11,16 @@ namespace UsingTasks
     {
         static void Main(string[] args)
         {
+            /*Normal Task */
+            Task<int> intTask = Task.Run(() =>
+            {
+                return 89898989;
+            });
 
-            /* Task with continuation */
-            Console.WriteLine("/* Task with continuation */");
+            Console.WriteLine(intTask.Result);
+
+                /* Task with continuation */
+                Console.WriteLine("/* Task with continuation */");
             Task<int> t = Task.Run(() =>
            {
                return 42;
